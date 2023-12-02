@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "python-enka-network"
+version = "0.0.0"
+description = "Modern API wrapper for Enka Network built on asyncio and pydantic."
+authors = [
+    { name = "luoshuijs", email = "luoshuijs@outlook.com" }
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+license = "MIT license"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+httpx = "^0.24.0"
+pydantic = "^1.10.7"
+
+[tool.poetry.extras]
+test = ["pytest", "pytest-asyncio", "python-dotenv"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(message)s"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+
+[tool.black]
+include = '\.pyi?$'
+line-length = 120
+target-version = ['py38']
